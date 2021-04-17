@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC,UAAU,AAAA,MAAM,CAAA;EAC7B,UAAU,EAAE,OAAO;CACtB;;AAED,AAAA,eAAe,CAAC,UAAU,AAAA,MAAM,CAAA;EAC5B,UAAU,EAAE,OAAO;CACtB;;AAED,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,OAAO;CAClB",
+    "sources": [
+        "TrendList.scss"
+    ],
+    "names": [],
+    "file": "TrendList.css"
+}

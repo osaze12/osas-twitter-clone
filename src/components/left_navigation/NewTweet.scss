@@ -1,0 +1,16 @@
+
+@import './NavIcons.scss';
+
+.tweet_feather a{
+    background: $brand-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    color: #fff;
+}
+
+.tweet_feather a:hover{
+    background: $brand-hover-color;
+    color: #fff;
+}

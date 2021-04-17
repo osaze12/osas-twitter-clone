@@ -1,0 +1,11 @@
+@import '../TopHome.scss';
+
+.chakra-ui-light .trendsection{
+    background: #f7fcff;
+    overflow:hidden;
+}
+
+.chakra-ui-dark .trendsection{
+    background: rgb(21, 24, 28);
+    overflow: hidden;
+}

@@ -1,0 +1,54 @@
+.more_section {
+  -webkit-box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+          box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+  position: fixed;
+  max-height: calc(100vh - 47px);
+  top: 0;
+  z-index: 99;
+  right: 965.5px;
+}
+
+.chakra-ui-light .more_section {
+  background: #fff;
+}
+
+.chakra-ui-dark .more_section {
+  background: #000;
+}
+
+.bkg_inner {
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.bkg_inner .ant-radio-input {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.chakra-ui-dark .bkg_inner {
+  background: #15181c;
+}
+
+.chakra-ui-light .bkg_inner {
+  background: #f7f9fa;
+}
+
+.toogle_theme_box_light {
+  background: #fff;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.toogle_theme_box_dark {
+  background: #000;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=MoreSection.css.map */

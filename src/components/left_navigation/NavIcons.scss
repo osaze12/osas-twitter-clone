@@ -1,0 +1,39 @@
+$nav-font-size: 25px;
+$brand-color:  rgba(29,161,242,1.00);
+$brand-hover-color: rgb(27, 136, 204);
+$brand-hover-dark-bg:  #06335057;
+$brand-hover-light-bg: #e5f5ff; 
+ 
+.chakra-ui-dark .nav_icon a:hover{
+    color: $brand-color;
+    background:$brand-hover-dark-bg;
+} 
+
+.chakra-ui-light .nav_icon a:hover{
+    color: $brand-color;
+    background:$brand-hover-light-bg;
+} 
+
+.chakra-ui-light .anticon-twitter{
+    color: #1da1f2;
+}
+
+.chakra-ui-dark .anticon-twitter{
+    color: rgb(217, 217, 217);
+}
+
+.nav_icon a{
+    width: 50px;
+    height: 50px;
+    border-radius: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav_icon a span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

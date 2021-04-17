@@ -1,0 +1,28 @@
+@media screen and (max-width: 450px) {
+  .left_side {
+    display: none !important;
+  }
+  .right_side {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .left_side {
+    margin-left: 0 !important;
+    padding-right: 0 !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .right_side {
+    display: none !important;
+  }
+  .main_home {
+    margin-right: 50px;
+  }
+}
+/*# sourceMappingURL=Main.css.map */

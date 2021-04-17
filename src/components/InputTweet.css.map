@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,SAAS,CAAA;EACL,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,WAAW;EACvB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,KAAK;CACnB",
+    "sources": [
+        "InputTweet.scss"
+    ],
+    "names": [],
+    "file": "InputTweet.css"
+}

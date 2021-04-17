@@ -1,0 +1,40 @@
+.chakra-ui-light .tweet:hover {
+  background: #ebeef0;
+}
+
+.chakra-ui-light .tweet_data_top .username,
+.chakra-ui-light .tweet_data_top .time,
+.chakra-ui-light .tweet_data_center p {
+  color: #43474b !important;
+}
+
+.chakra-ui-light .tweet_data_top .name {
+  color: #0f1419 !important;
+}
+
+.chakra-ui-dark .tweet:hover {
+  background: #060606;
+}
+
+.tweet {
+  cursor: pointer;
+}
+
+.twitter_style {
+  background: #1da1f2;
+  font-size: 1.7em;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 99px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=Tweet.css.map */

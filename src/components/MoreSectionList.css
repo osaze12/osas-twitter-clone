@@ -1,0 +1,12 @@
+.more_section_list {
+  cursor: pointer;
+}
+
+.chakra-ui-light .more_section_list:hover {
+  background: #ebeef0;
+}
+
+.chakra-ui-dark .more_section_list:hover {
+  background: #1e2125;
+}
+/*# sourceMappingURL=MoreSectionList.css.map */

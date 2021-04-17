@@ -1,0 +1,92 @@
+.chakra-ui-dark .nav_icon a:hover {
+  color: #1da1f2;
+  background: #06335057;
+}
+
+.chakra-ui-light .nav_icon a:hover {
+  color: #1da1f2;
+  background: #e5f5ff;
+}
+
+.nav_icon a {
+  width: 50px;
+  height: 50px;
+  border-radius: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav_icon a span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tweet_action_retweet, .tweet_action_share, .tweet_action_love, .tweet_action_msg {
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 99px;
+  margin-right: 4px;
+}
+
+.tweet_action_share_text:hover, .tweet_action_msg_text:hover {
+  color: #1da1f2;
+  cursor: pointer;
+}
+
+.chakra-ui-dark .tweet_action_share:hover, .chakra-ui-dark .tweet_action_msg:hover {
+  background: #06335057;
+}
+
+.chakra-ui-light .tweet_action_share:hover, .chakra-ui-light .tweet_action_msg:hover {
+  background: #e5f5ff;
+}
+
+.chakra-ui-dark .tweet_action_retweet:hover {
+  background: #0f6b0f52;
+}
+
+.chakra-ui-light .tweet_action_retweet:hover {
+  background: #90ff9052;
+}
+
+.tweet_action_retweet_text:hover {
+  color: #52cc52;
+  cursor: pointer;
+}
+
+.chakra-ui-dark .tweet_action_love:hover {
+  background: #3e161d7a;
+}
+
+.chakra-ui-light .tweet_action_love:hover {
+  background: #f9c4cd7a;
+}
+
+.tweet_action_love_text:hover {
+  color: #ff95a7;
+  cursor: pointer;
+}
+/*# sourceMappingURL=TweetActionIcon.css.map */

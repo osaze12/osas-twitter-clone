@@ -1,0 +1,8 @@
+.chakra-ui-dark .chakra-modal__content {
+  background: #000 !important;
+}
+
+.chakra-ui-dark .chakra-modal__overlay {
+  background: rgba(91, 112, 131, 0.4) !important;
+}
+/*# sourceMappingURL=TweetModal.css.map */

@@ -1,0 +1,51 @@
+@import './left_navigation/NavIcons.scss';
+
+.tweet_action_retweet, .tweet_action_share, .tweet_action_love, .tweet_action_msg{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    margin-right: 4px;
+}
+
+.tweet_action_share_text:hover, .tweet_action_msg_text:hover{
+    color: #1da1f2;
+    cursor: pointer;
+}
+
+.chakra-ui-dark .tweet_action_share:hover, .chakra-ui-dark .tweet_action_msg:hover{
+    background: $brand-hover-dark-bg;
+}
+
+.chakra-ui-light .tweet_action_share:hover, .chakra-ui-light .tweet_action_msg:hover{
+    background: $brand-hover-light-bg;
+}
+.chakra-ui-dark .tweet_action_retweet:hover{
+    background: #0f6b0f52;
+}
+
+.chakra-ui-light .tweet_action_retweet:hover{
+    background: #90ff9052;
+}
+
+.tweet_action_retweet_text:hover{
+    color: #52cc52;
+    cursor: pointer;
+}
+
+.chakra-ui-dark .tweet_action_love:hover{
+    background: #3e161d7a;
+}
+
+.chakra-ui-light .tweet_action_love:hover{
+    background: #f9c4cd7a;
+}
+ 
+.tweet_action_love_text:hover{
+    color: #ff95a7;
+    cursor: pointer;
+}
+ 
+

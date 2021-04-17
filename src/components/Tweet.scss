@@ -1,0 +1,38 @@
+$bold-tweet-heading: #0f1419;
+$light-tweet-text: #43474b;
+
+.chakra-ui-light .tweet:hover{
+    background: #ebeef0;
+}
+
+
+.chakra-ui-light .tweet_data_top .username,
+.chakra-ui-light .tweet_data_top .time,
+.chakra-ui-light .tweet_data_center p {
+    color: $light-tweet-text !important;
+}
+
+.chakra-ui-light .tweet_data_top .name{
+    color: $bold-tweet-heading !important;
+}
+
+
+.chakra-ui-dark .tweet:hover{
+    background: #060606;
+}
+
+.tweet{
+    cursor: pointer;
+}
+
+.twitter_style{
+    background: #1da1f2;
+    font-size: 1.7em;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

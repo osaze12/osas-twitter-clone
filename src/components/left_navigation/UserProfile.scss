@@ -1,0 +1,15 @@
+@import './NavIcons.scss';
+
+.hoverBgColor{
+    width: 60px;
+    height: 60px;
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.chakra-ui-dark .hoverBgColor:hover{
+    background: $brand-hover-light-bg;
+     
+} 

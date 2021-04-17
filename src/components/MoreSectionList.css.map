@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,kBAAkB,CAAA;EACd,MAAM,EAAE,OAAO;CAClB;;AAED,AAAA,gBAAgB,CAAC,kBAAkB,AAAA,MAAM,CAAA;EACrC,UAAU,EAAE,OAAO;CACtB;;AAED,AAAA,eAAe,CAAC,kBAAkB,AAAA,MAAM,CAAA;EACpC,UAAU,EAAE,OAAO;CACtB",
+    "sources": [
+        "MoreSectionList.scss"
+    ],
+    "names": [],
+    "file": "MoreSectionList.css"
+}

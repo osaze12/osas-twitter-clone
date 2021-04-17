@@ -1,37 +1,60 @@
-import { Box, Container, Spacer, Flex, HStack } from '@chakra-ui/layout';
-import React from 'react';
-import '../components/Main.css';
 
-import FirstBox from './FirstBox'
-import SecondBox from './SecondBox'
+import { Box, Flex} from '@chakra-ui/layout';
+import React from 'react';
+import './Main.css';
+import SideNav from './left_navigation/SideNav'
+import TopHome from './TopHome'
+import RightSection from './right_section/RightSection'
+import TweetInputArea from './TweetInputArea';
+import TweetList from './TweetList';
+import TweetModal from './TweetModal';
+import MessagesSection from './MessagesSection';
+import MoreSection from './MoreSection';
+
 
 
 function Main() {
-        
+   
     return (
-        <>
-        {/* <Container maxW="container.lg"> */}
-        <Box padding='10px 8px'>
-        {/* <Flex justifyContent='space-between' flexWrap='wrap'> */}
-            <HStack spacing='5' alignItems='flex-start'>
-                <Box >
-                    <FirstBox />
+        <Box minH='full' marginTop='1'>
+           
+            <Box className='overlay'></Box>
+            
+            <Flex>
+                
+                    <Box className='left_side' marginLeft='24' paddingRight='5' position='relative' width='100px'>
+                        <SideNav />
+                    </Box>
+                
+               
+                
+                <Box className='main_home' flex='1.2'>
+                    <TopHome />
+                    <TweetInputArea />
+                    <TweetList />
+                    
+
                 </Box>
                 
-                <Spacer />
+                    <Box className='right_side' flex='1' position='relative' width='100px'>
+                        <RightSection /> 
+                    </Box>
+                
+                
+            </Flex>
 
-                <Box >
-                    <SecondBox />
-                </Box>
-                </HStack>
-            {/* </Flex> */}
+            <TweetModal />
+
+            <Box>
+                <MessagesSection />
+            </Box>
+
+            <Box>
+                <MoreSection />
+            </Box>
+            
+           
         </Box>
-        {/* </Container> */}
-            
-        
-        
-            
-        </>
     )
 }
 export default Main
