@@ -1,5 +1,5 @@
 .chakra-ui-light .tweet:hover {
-  background: #ebeef0;
+  background: #f9f9f9;
 }
 
 .chakra-ui-light .tweet_data_top .username,
@@ -36,5 +36,17 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media screen and (max-width: 450px) {
+  .tweet_data_top {
+    font-size: .7em !important;
+  }
+  .tweet_data_center {
+    font-size: .8em !important;
+  }
+  .tweet_data_buttom {
+    font-size: .8em !important;
+  }
 }
 /*# sourceMappingURL=Tweet.css.map */

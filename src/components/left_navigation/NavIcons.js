@@ -12,7 +12,7 @@ function NavIcons({icon, hoverColor, tooltip, fontSiz, w, h, text}) {
         height: h,
     }
     return (
-        <Box className='nav_icon' color='#43474b'>
+        <Box className={`nav_icon ${text && 'nav_icon_text'}`} color='#43474b'>
             
             {text ?
                 <a href="#"

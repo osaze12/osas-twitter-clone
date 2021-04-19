@@ -9,7 +9,7 @@ $brand-hover-light-bg: #e5f5ff;
     background:$brand-hover-dark-bg;
 } 
 
-.chakra-ui-light .nav_icon a:hover{
+.chakra-ui-light .nav_icon:hover{
     color: $brand-color;
     background:$brand-hover-light-bg;
 } 
@@ -22,13 +22,17 @@ $brand-hover-light-bg: #e5f5ff;
     color: rgb(217, 217, 217);
 }
 
-.nav_icon a{
+.nav_icon{
     width: 50px;
     height: 50px;
     border-radius: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.nav_icon_text{
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .nav_icon a span{

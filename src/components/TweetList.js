@@ -17,25 +17,26 @@ function TweetList({tweets}) {
         if (!parse){
             let sortedTweets = tweets.sort((a, b) => b.id - a.id);
             setDataTweets(sortedTweets);
-            return console.log('b')
+            return console.log('route a worked')
         }
         let sortedTweets = parse.sort((a, b) => b.id - a.id);
         setDataTweets(sortedTweets);
-        return console.log('a')
+        return console.log('route b worked')
     }, [tweets])
 
 
     const userTweets =  dataTweets  && dataTweets.map((data)=>{
             return <Tweet 
                         key={data.id}
+                        id={data.id}
                         profileImg={profileImg} 
-                        name='Front-End Dav' 
+                        name='Osas' 
                         username='@OsazeAgbi' 
                         tweet={data.text}
                         
                         comment={data.comment} 
-                        likes={data.like} 
-                        share={data.share}
+                        like={data.like} 
+                        retweet={data.retweet}
                         time={data.createdAt.props.time} 
                     />
     });

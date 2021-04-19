@@ -8,10 +8,7 @@ function Message({name, username, date, msg}) {
         <Box  alignItems='center' className='message'>
             <Box padding='5'>
                 <Flex justifyContent='space-between'>
-            
                     <HStack >
-
-                    
                         <UserProfile />
                         
                         <VStack alignItems='flex-start' spacing='-1'>

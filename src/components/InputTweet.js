@@ -5,6 +5,7 @@ import './InputTweet.css';
 import React from 'react'
 import InputMedia from './InputMedia'
 import { connect } from 'react-redux';
+import './InputTweet.css'
 
 
 function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state }) {
@@ -30,7 +31,7 @@ function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state }) 
         dispatch({type: 'TEMPORAL_TWEET', payload: tweetData});
     }
     return (
-        <Box width='100%'>
+        <Box width='100%' className='input_tweet'>
             <Box marginBottom='5'>
                 <TextArea
                     // value={handleValue}

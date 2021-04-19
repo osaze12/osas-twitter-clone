@@ -2,7 +2,7 @@ $bold-tweet-heading: #0f1419;
 $light-tweet-text: #43474b;
 
 .chakra-ui-light .tweet:hover{
-    background: #ebeef0;
+    background: #f9f9f9;
 }
 
 
@@ -35,4 +35,20 @@ $light-tweet-text: #43474b;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width:450px) {
+    .tweet_data_top{
+        font-size: .7em !important;
+    }
+
+    .tweet_data_center{
+        font-size: .8em !important;
+    }
+
+    .tweet_data_buttom{
+        font-size: .8em !important;
+    }
+    
+    
 }

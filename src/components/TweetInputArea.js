@@ -2,10 +2,11 @@ import { Box, Flex} from '@chakra-ui/layout'
 import React from 'react'
 import InputTweet from './InputTweet'
 import UserProfile from './left_navigation/UserProfile'
+import './TweetInputArea.css'
 
 function TweetInputArea() {
     return (
-        <Box borderWidth='1px' padding='3'>
+        <Box borderWidth='1px' padding='3' className='tweet_input_area'>
             <Flex>
                 <Box>
                     <UserProfile paddingright={true} />

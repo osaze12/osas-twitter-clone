@@ -10,6 +10,8 @@ import TweetList from './TweetList';
 import TweetModal from './TweetModal';
 import MessagesSection from './MessagesSection';
 import MoreSection from './MoreSection';
+import FloatingTweetButton from './FloatingTweetButton';
+import MobileNav from './MobileNav';
 
 
 
@@ -17,31 +19,23 @@ function Main() {
    
     return (
         <Box minH='full' marginTop='1'>
-           
             <Box className='overlay'></Box>
-            
             <Flex>
-                
-                    <Box className='left_side' marginLeft='24' paddingRight='5' position='relative' width='100px'>
-                        <SideNav />
-                    </Box>
-                
-               
+                <Box className='left_side' marginLeft='24' paddingRight='5' position='relative' width='100px'>
+                    <SideNav />
+                </Box>
                 
                 <Box className='main_home' flex='1.2'>
                     <TopHome />
                     <TweetInputArea />
                     <TweetList />
-                    
-
                 </Box>
                 
-                    <Box className='right_side' flex='1' position='relative' width='100px'>
-                        <RightSection /> 
-                    </Box>
-                
-                
+                <Box className='right_side' flex='1' position='relative' width='100px'>
+                    <RightSection /> 
+                </Box> 
             </Flex>
+
 
             <TweetModal />
 
@@ -52,8 +46,14 @@ function Main() {
             <Box>
                 <MoreSection />
             </Box>
-            
-           
+
+            <Box>
+                <FloatingTweetButton />
+            </Box>
+
+            <Box>
+                <MobileNav />
+            </Box>
         </Box>
     )
 }

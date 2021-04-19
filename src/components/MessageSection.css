@@ -6,4 +6,10 @@
 .chakra-ui-dark .message_section {
   background: #000;
 }
+
+@media screen and (max-width: 450px) {
+  .message_section {
+    display: none;
+  }
+}
 /*# sourceMappingURL=MessageSection.css.map */

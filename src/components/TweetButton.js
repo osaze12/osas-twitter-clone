@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import HumanTime from 'react-human-time';
 
-function TweetButton({is, dispatch}) {
+function TweetButton({is, dispatch, tweet_is_in_modal}) {
 
     const handleButton = () => {
         const tweet = is.tweetText;
@@ -23,6 +23,9 @@ function TweetButton({is, dispatch}) {
 
             dispatch({type:'LIVE_TWEET', payload: sendTweet});
             dispatch({type: 'EMPTY_TWEET_TEXT'});
+
+            // YOU WANT TO CLOSE THE MODAL WHEN USER CLICKS TWEET BUTTON
+            tweet_is_in_modal === true && dispatch({type:'MODAL', payload: false});
             return ;
         }
     }

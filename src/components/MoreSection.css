@@ -40,15 +40,17 @@
   background: #fff;
   color: black;
   padding: 15px 30px;
-  border-radius: 3px;
+  border-radius: 7px;
   cursor: pointer;
+  border: 1px solid #b1b1b1;
 }
 
 .toogle_theme_box_dark {
   background: #000;
   color: #fff;
   padding: 15px 30px;
-  border-radius: 3px;
+  border-radius: 7px;
   cursor: pointer;
+  border: 1px solid #b1b1b1;
 }
 /*# sourceMappingURL=MoreSection.css.map */

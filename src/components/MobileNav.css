@@ -1,0 +1,23 @@
+.mobile_nav {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .mobile_nav {
+    display: block;
+    height: 50px;
+  }
+  .mobile_nav_inner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .chakra-ui-light .mobile_nav_inner {
+    background: #fff;
+  }
+  .chakra-ui-dark .mobile_nav_inner {
+    background: #000;
+  }
+}
+/*# sourceMappingURL=MobileNav.css.map */

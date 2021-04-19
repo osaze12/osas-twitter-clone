@@ -3,21 +3,22 @@ const getJData = JSON.parse(getStringData);
 
 const initialState = {
     showModal: false,
+    isMobile: false,
     disableButton: true,
     showMessageBox: false,
     moreSection: false,
     tweetText: '',
     liveTweet: getStringData ? getJData : [
-        {"comment":0,"id":1,"like":0,"retweet":0,"share":0,"text":"i'm happy ve",
+        { comment :0, id:0, like :25, retweet :10, share :0, text :"i'm happy ve",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
         ,
-        {"comment":0,"id":2,"like":0,"retweet":0,"share":0,"text":"Example of creating a search box by grouping a standard input with a search button.",
+        { comment :0, id:1, like :8, retweet :22, share :0, text :"Example of creating a search box by grouping a standard input with a search button.",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
         ,
-        {"comment":0,"id":3,"like":0,"retweet":0,"share":0,"text":"You can use the Input in conjunction with Tooltip component to create a Numeric Input",
+        { comment :0, id:2, like :3, retweet :18, share :0, text :"You can use the Input in conjunction with Tooltip component to create a Numeric Input",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
         ,
-        {"comment":0,"id":4,"like":0,"retweet":0,"share":0,"text":"A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.",
+        { comment :0, id:3, like :0, retweet :20, share :0, text :"A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
     ],
   };
@@ -66,6 +67,32 @@ const initialState = {
             return {
                 ...state,
                 tweetText: ''
+            }
+        
+        case "IS_MOBILE":
+            return {
+                ...state,
+                isMobile: action.payload
+            }
+        
+        case 'LIKE_COUNT':
+            let singleTweetLike = state.liveTweet.find((stateId)=>{
+                return stateId.id === action.payload
+            });
+            return {
+                ...state, 
+                liveTweet: state.liveTweet.map(tweet => tweet.id === action.payload
+                    ? {...tweet, like: singleTweetLike.like +1} : tweet)
+            }
+
+        case 'RETWEET_COUNT':
+            let singleTweetRetweet = state.liveTweet.find((stateId)=>{
+                return stateId.id === action.payload
+            });
+            return {
+                ...state, 
+                liveTweet: state.liveTweet.map(tweet => tweet.id === action.payload
+                    ? {...tweet, retweet: singleTweetRetweet.retweet +1} : tweet)
             }
 
         

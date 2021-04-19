@@ -82,7 +82,7 @@ function MoreSection(props) {
                                             <Box className={`toogle_theme_box_${colorMode === 'light' ? 'light' : 'dark' }`} 
                                                 onClick={toggleColorMode}
                                             >
-                                                {colorMode === "light" ? 'Default' :' Lights off' } </Box>
+                                                {colorMode === "light" ? 'Default' :' Lights out' } </Box>
                                         </Flex>
                                 </Box>
                             </Box>

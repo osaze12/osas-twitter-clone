@@ -1,0 +1,6 @@
+@media screen and (max-width: 450px) {
+  .tweet_input_area {
+    display: none;
+  }
+}
+/*# sourceMappingURL=TweetInputArea.css.map */

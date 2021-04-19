@@ -19,17 +19,14 @@ function TweetModal(props) {
 
     const handleClose = () => {
         props.dispatch({type:'MODAL', payload: false})
+        props.dispatch({type:'IS_MOBILE', payload: false})
     }
 
     return (
         <Box>
-
             <Modal isOpen={props.showModal || false} onClose={handleClose}>
             <ModalOverlay />
             <ModalContent maxW='600px' borderRadius='2xl'>
-                
-
-                
                 <Box outline='none' onClick={()=> props.dispatch({type:'MODAL', payload: false})}>
                     <NavIcons icon={<CloseOutlined style={{color:'#1da1f2'}} />}
                         tooltip='Close' 
@@ -52,7 +49,7 @@ function TweetModal(props) {
                             />
                             <Divider marginTop='4'/>
 
-                            <InputMedia />
+                            <InputMedia tweet_is_in_modal={true} />
                         </VStack>
                     </HStack>
                 </Box>
