@@ -18,7 +18,7 @@ function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state }) 
         dispatch({type:'TWEET_TEXT', payload: tweet});
 
         const length = tweet.length;
-        if (length > 120 || length < 3){
+        if (length > 200 || length < 4){
             return dispatch({type: 'DISABLEBUTTON', payload: true});
         }
 
@@ -42,7 +42,7 @@ function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state }) 
                     autoSize={normalInput ? true  : { minRows: 3, maxRows: 7 }}
                     
                     bordered={false}
-                    maxLength='120'
+                    maxLength='200'
                     id='textArea'
                     // disabled={disabled}
                 />

@@ -12,30 +12,27 @@ function NavIcons({icon, hoverColor, tooltip, fontSiz, w, h, text}) {
         height: h,
     }
     return (
-        <Box className={`nav_icon ${text && 'nav_icon_text'}`} color='#43474b'>
+        <Box className={`nav_icon ${text && 'nav_icon_text'}`} color='#43474b' position='relative'>
             
             {text ?
                 <a href="#"
-                style={styles} >
+                    style={styles} >
                         <HStack>
-                        <span>{icon}</span>
-                       <Text fontSize='xs' color='twitter.500' fontWeight='bold'>{text}</Text>
-
+                            <span>{icon}</span>
+                            <Text fontSize='xs' color='twitter.500' fontWeight='bold'>{text}</Text>
                         </HStack>
                     
-            </a>
+                </a>
             :
+        
             <a className='' href="#"
                 style={styles} >
                     <Tooltip label={tooltip} fontSize='xs'>
                         <HStack>
-                        <span>{icon}</span>
-                    
-
+                            <span>{icon}</span>
                         </HStack>
                         
-                    </Tooltip>
-                    
+                    </Tooltip>  
             </a>
             }
             

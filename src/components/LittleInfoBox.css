@@ -1,0 +1,150 @@
+.chakra-ui-light .tweet:hover {
+  background: #f9f9f9;
+}
+
+.chakra-ui-light .tweet_data_top .username,
+.chakra-ui-light .tweet_data_top .time,
+.chakra-ui-light .tweet_data_center p {
+  color: #43474b !important;
+}
+
+.chakra-ui-light .tweet_data_top .name {
+  color: #0f1419 !important;
+}
+
+.chakra-ui-dark .tweet:hover {
+  background: #060606;
+}
+
+.tweet {
+  cursor: pointer;
+}
+
+.twitter_style {
+  background: #1da1f2;
+  font-size: 1.7em;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 99px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.chakra-ui-dark .tweet_settings {
+  background: #000;
+}
+
+.tweet_settings {
+  position: absolute;
+  top: 40px;
+  left: -250px;
+  background: #fff;
+  -webkit-box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+          box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+  z-index: 999;
+  width: 300px;
+}
+
+@media screen and (max-width: 450px) {
+  .tweet_data_top {
+    font-size: .7em !important;
+  }
+  .tweet_data_center {
+    font-size: .8em !important;
+  }
+  .tweet_data_buttom {
+    font-size: .8em !important;
+  }
+}
+
+.chakra-ui-dark .nav_icon a:hover {
+  color: #1da1f2;
+  background: #06335057;
+}
+
+.chakra-ui-light .nav_icon:hover {
+  color: #1da1f2;
+  background: #e5f5ff;
+}
+
+.chakra-ui-light .anticon-twitter {
+  color: #1da1f2;
+}
+
+.chakra-ui-dark .anticon-twitter {
+  color: #d9d9d9;
+}
+
+.nav_icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav_icon_text {
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.nav_icon a span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.little_info_box {
+  -webkit-box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+          box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+  position: absolute;
+  top: 50px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 999;
+  color: #43474b;
+}
+
+.chakra-ui-dark .little_info_box {
+  background: #000;
+}
+
+.chakra-ui-light .small_info_button {
+  color: #fff;
+}
+
+.chakra-ui-dark .small_info_button {
+  border: 1px solid;
+  border-color: #fff;
+  background: #fff;
+  color: #000;
+}
+
+.chakra-ui-dark .little_info_box .d_bold {
+  color: #d9d9d9;
+}
+/*# sourceMappingURL=LittleInfoBox.css.map */

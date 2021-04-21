@@ -1,3 +1,6 @@
+@import './NavIcons.scss';
 
 
-
+.chakra-ui-dark .side_nav .nav_icon{
+    color: $brand-white-text;
+}

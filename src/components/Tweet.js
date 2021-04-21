@@ -1,14 +1,36 @@
 import { Image } from '@chakra-ui/image'
 import { Box, Text, HStack } from '@chakra-ui/layout'
-import React from 'react'
+import React, { useState } from 'react'
 import TweetActions from './TweetActions'
 import './Tweet.css'
 import HumanTime from 'react-human-time';
 import { Flex } from '@chakra-ui/layout'
 import NavIcons from './left_navigation/NavIcons'
-import {EllipsisOutlined} from '@ant-design/icons';
+import {EllipsisOutlined,FrownOutlined, UserAddOutlined, AppstoreAddOutlined, AudioMutedOutlined, StopOutlined, CodeOutlined, FlagOutlined} from '@ant-design/icons';
+import LittleSmallInfoBox from './LittleSmallInfoBox'
+import MoreSectionList from './MoreSectionList'
 
 function Tweet({id, profileImg, name, username, time, like, retweet, tweet, withoutTweetActions,borderCurve, iconImg, class_name}) {
+    const [showMoreInfo, setShowMoreInfo] = useState(false);
+    const [showTweetSett, setShowTweetSett] = useState(false);
+
+    const handleMoreOption = () => {
+        setShowMoreInfo(true)
+    }
+
+    const handleMoreOptionLeave = () => {
+        setShowMoreInfo(false);
+    }
+
+    const handleTweetSett = () => {
+        setShowTweetSett(!showTweetSett)
+    }
+
+    const handleTweetSettLeave = () => {
+        setShowTweetSett(false)
+    }
+
+
     return (
         <Box borderWidth='1px' padding='3' borderRadius={borderCurve && 'xl'} className={'tweet'}>
             <HStack alignItems='flex-start'>
@@ -16,13 +38,19 @@ function Tweet({id, profileImg, name, username, time, like, retweet, tweet, with
                     {iconImg ? 
                         <Box className={class_name}>{iconImg}</Box>
                     :
-                        <Image 
-                            src={profileImg}
-                            borderRadius="full"
-                            boxSize="50px"
-                            objectFit="cover"
-                            alt="prifile"
-                        />
+                        <Box className='profile_tweet_img' position='relative' onMouseOver={handleMoreOption}  onMouseLeave={handleMoreOptionLeave}>
+                            <Image 
+                                src={profileImg}
+                                borderRadius="full"
+                                boxSize="50px"
+                                objectFit="cover"
+                                alt="profile"
+                            />
+
+                            {showMoreInfo &&
+                                <LittleSmallInfoBox userInfo={{name, username, time, like, retweet, profileImg}} />
+                            }
+                        </Box>
                     }
                 </Box>
                 
@@ -31,17 +59,39 @@ function Tweet({id, profileImg, name, username, time, like, retweet, tweet, with
                         <Flex justifyContent='space-between'>
                             <HStack spacing='1'>
                                 <Text  className='name'><b>{name}</b></Text>
-                                <Text   fontSize="un"  className='username'>{username}</Text>
-                                <Text  className='time' ><span className='dot'><b>&middot;</b></span> {<HumanTime time={time}  />}</Text>
+                                <Text fontSize='sm'  color='#6e767d'  className='username'>{username}</Text>
+                                <Text fontSize='sm'  color='#6e767d' className='time' ><span className='dot'><b>&middot;</b></span> {<HumanTime time={time}  />}</Text>
                             </HStack>
+                           <Box className='more_tweet_option' onClick={handleTweetSett} onMouseLeave={handleTweetSettLeave} position='relative'>
+                               <NavIcons 
+                                    icon={<EllipsisOutlined />} 
+                                    tooltip='More' 
+                                    fontSiz='25px' 
+                                    w='40px' h='40px'
+                                />
+
+                                {showTweetSett &&
+                                    <Box className='tweet_settings'>
+                                        <MoreSectionList icon={<FrownOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Not interested in this tweet' />
+                                        <MoreSectionList icon={<UserAddOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Unfollow @OsazeAgbi' />
+                                        <MoreSectionList icon={<AppstoreAddOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Add/remove @OsazeAgbi from list' />
+                                        <MoreSectionList icon={<AudioMutedOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Mute @OsazeAgbi' />
+                                        <MoreSectionList icon={<StopOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Block @OsazeAgbi' />
+                                        <MoreSectionList icon={<CodeOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Embed tweet' />
+                                        <MoreSectionList icon={<FlagOutlined style={{color:'rgb(91, 112, 131)'}}/>} text='Report tweet' />
+                                    </Box>
+                                }
+                           </Box>
                             
-                            <NavIcons icon={<EllipsisOutlined />} tooltip='More' fontSiz='25px' w='40px' h='40px' />
+                           
+                            
                         </Flex>
                     </Box>
 
                     <Box className='tweet_data_center'>
-                        <Text >{tweet}</Text>
+                        <Text maxW='475px' fontSize='md' fontWeight='medium' lineHeight='shorter' >{tweet}</Text>
                     </Box>
+                    {/* //IF YOU DONT WANT TWEET ACTIONS COMPONENT, IT SHOULD NOT SHOW */}
                     {!withoutTweetActions &&
                     
                         <Box className='tweet_data_buttom'>

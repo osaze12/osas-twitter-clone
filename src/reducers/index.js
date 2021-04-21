@@ -9,13 +9,13 @@ const initialState = {
     moreSection: false,
     tweetText: '',
     liveTweet: getStringData ? getJData : [
-        { comment :0, id:0, like :25, retweet :10, share :0, text :"i'm happy ve",
+        { comment :0, id:0, like :25, retweet :10, share :0, text :"whether the whether is fine, hot cold or warm, we'll weather the weather, whatever the weather, and whether we like it.",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
         ,
         { comment :0, id:1, like :8, retweet :22, share :0, text :"Example of creating a search box by grouping a standard input with a search button.",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
         ,
-        { comment :0, id:2, like :3, retweet :18, share :0, text :"You can use the Input in conjunction with Tooltip component to create a Numeric Input",
+        { comment :0, id:2, like :3, retweet :18, share :0, text :"whether the whether is fine, hot cold or warm, we'll weather the weather, whatever the weather, and whether we like it.",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
         ,
         { comment :0, id:3, like :0, retweet :20, share :0, text :"A basic widget for getting the user input is a text field. Keyboard and mouse can be used for providing or changing data.",

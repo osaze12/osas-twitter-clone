@@ -18,6 +18,7 @@
 
 .tweet {
   cursor: pointer;
+  color: #cccccc;
 }
 
 .twitter_style {
@@ -36,6 +37,21 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.chakra-ui-dark .tweet_settings {
+  background: #000;
+}
+
+.tweet_settings {
+  position: absolute;
+  top: 40px;
+  left: -250px;
+  background: #fff;
+  -webkit-box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+          box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+  z-index: 999;
+  width: 300px;
 }
 
 @media screen and (max-width: 450px) {

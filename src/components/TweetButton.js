@@ -9,7 +9,7 @@ function TweetButton({is, dispatch, tweet_is_in_modal}) {
     const handleButton = () => {
         const tweet = is.tweetText;
         
-        if (tweet.length <= 120 && tweet.length > 3){
+        if (tweet.length <= 200 && tweet.length > 3){
             
             const sendTweet = {
                 comment: 0,

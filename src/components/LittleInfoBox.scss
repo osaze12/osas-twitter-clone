@@ -1,0 +1,34 @@
+@import './Tweet.scss';
+@import './left_navigation/NavIcons.scss';
+
+.little_info_box{
+    box-shadow: #65778633 0px 0px 15px, #65778626 0px 0px 3px 1px;
+    position: absolute;
+    top: 50px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 999;
+    color:  $light-tweet-text;
+}
+
+.chakra-ui-dark .little_info_box{
+    background: #000;
+}
+
+
+
+.chakra-ui-light .small_info_button{
+    color: #fff;
+}
+
+.chakra-ui-dark .small_info_button{
+    border: 1px solid;
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+}
+
+.chakra-ui-dark .little_info_box .d_bold{
+    color: $brand-white-text;
+}

@@ -4,4 +4,20 @@
   outline: none;
   font-size: large;
 }
+
+.chakra-ui-dark .input_tweet #textArea::-webkit-input-placeholder {
+  color: #81959c !important;
+}
+
+.chakra-ui-dark .input_tweet #textArea:-ms-input-placeholder {
+  color: #81959c !important;
+}
+
+.chakra-ui-dark .input_tweet #textArea::-ms-input-placeholder {
+  color: #81959c !important;
+}
+
+.chakra-ui-dark .input_tweet #textArea::placeholder {
+  color: #81959c !important;
+}
 /*# sourceMappingURL=InputTweet.css.map */
