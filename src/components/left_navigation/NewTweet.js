@@ -5,7 +5,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import './NewTweet.css'
 
-function NewTweet({tooltip, w, h, dispatch}) {
+function NewTweet({tooltip, w, h, setSize, dispatch}) {
 
     const styles = {
         width: w,
@@ -15,7 +15,7 @@ function NewTweet({tooltip, w, h, dispatch}) {
         <div className='tweet_feather' onClick={()=> dispatch({type:'MODAL', payload: true})}>
             <a href='#tweet' style={styles}>
                 <Tooltip label={tooltip} fontSize='smaller'>
-                    <span className='feather_add'><FontAwesomeIcon icon={faFeatherAlt} /> </span>
+                    <span className='feather_add' style={{fontSize: `${setSize ? setSize : ''}`}}><FontAwesomeIcon icon={faFeatherAlt} /> </span>
                 </Tooltip>
             </a>
         </div>

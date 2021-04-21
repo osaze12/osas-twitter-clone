@@ -13,7 +13,6 @@ import {
     Button,
     useColorMode
   } from "@chakra-ui/react"
-import TwitterTweet from './assets/twitterTweet.PNG'
 import Tweet from './Tweet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
