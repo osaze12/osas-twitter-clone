@@ -44,7 +44,7 @@ function Tweet({ retweeterName, state, id, profileImg,
     const handleTweetSettLeave = () => {
         setShowTweetSett(false)
     }
-    //CHANGE EVERY \N \R (SPACE) TO HTML <BR />
+    //CHANGE EVERY \N \R (SPACE) TO HTML <BR /> .
     const cleanedTweet = tweet.replace(/\r\n|\r|\n/g, "<br />");
 
     return (
