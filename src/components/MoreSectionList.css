@@ -9,4 +9,8 @@
 .chakra-ui-dark .more_section_list:hover {
   background: #1e2125;
 }
+
+.chakra-ui-light .more_section_list {
+  color: black;
+}
 /*# sourceMappingURL=MoreSectionList.css.map */

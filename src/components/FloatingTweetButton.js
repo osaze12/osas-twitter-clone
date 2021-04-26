@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 function FloatingTweetButton(props) {
     return (
         <Box className='floating_button' onClick={() => props.dispatch({type:'IS_MOBILE', payload: true})}>
-            <NewTweet tooltip='Tweet' w='70px' h='70px' setSize='27px' />
+            <NewTweet tooltip='Tweet' w='65px' h='65px' setSize='27px' />
         </Box>
     )
 }

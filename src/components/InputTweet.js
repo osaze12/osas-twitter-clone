@@ -2,41 +2,45 @@
 import { Box } from '@chakra-ui/layout'
 import { Input } from 'antd';
 import './InputTweet.css';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import InputMedia from './InputMedia'
 import { connect } from 'react-redux';
 import './InputTweet.css'
 
 
-function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state }) {
-
+function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state, parentCallback, is_modal }) {
     const { TextArea } = Input;
+    const [tweetText, setTweetText] = useState('');
     
-    //CHECK INPUT STRING LENGTH
-    const handleValue = (input) => {
-        const tweet = input.target.value;
-        dispatch({type:'TWEET_TEXT', payload: tweet});
 
-        const length = tweet.length;
-        if (length > 200 || length < 4){
-            return dispatch({type: 'DISABLEBUTTON', payload: true});
+
+
+   //CLEAR INPUT WHEN THE TWEET BUTTON IS PUSHED
+    useEffect(()=> {
+        if (state.shouldEmptyTextInput === true){
+           setTweetText('');
+           dispatch({type: 'EMPTY_TWEET_TEXT', payload: false});
         }
+    }, [state.shouldEmptyTextInput])
+    
 
-        const tweetData = {
-            text: tweet,
-        }
 
-        dispatch({type: 'DISABLEBUTTON', payload: false});
+    const handleTweetText = (e) => {
+        setTweetText(e.target.value);
+        
 
-        dispatch({type: 'TEMPORAL_TWEET', payload: tweetData});
+        //SEND DATA TO PARENT COMPONENT 
+        if (is_modal) parentCallback(e.target.value);
+        
     }
+
+
     return (
         <Box width='100%' className='input_tweet'>
             <Box marginBottom='5'>
                 <TextArea
-                    // value={handleValue}
-                    value={state.tweetText}
-                    onChange={handleValue}
+                    value={tweetText}
+                    onChange={handleTweetText }
                     placeholder="What's happening?"
                     size='large'
                     autoSize={normalInput ? true  : { minRows: 3, maxRows: 7 }}
@@ -47,8 +51,8 @@ function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state }) 
                     // disabled={disabled}
                 />
             </Box>
-        
-            {allowInputMedia && <InputMedia /> }
+
+            {allowInputMedia && <InputMedia data={tweetText} /> }
         </Box>
     )
 }

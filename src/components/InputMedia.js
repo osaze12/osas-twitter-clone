@@ -6,7 +6,7 @@ import TweetButton from './TweetButton';
 import './InputMedia.css'
 import { connect } from 'react-redux';
 
-function InputMedia({tweet_is_in_modal, is_mobile}) {
+function InputMedia({tweet_is_in_modal, is_mobile, data}) {
     return (
         <Box width='100%' className='input_media'>
             <Flex>
@@ -20,7 +20,7 @@ function InputMedia({tweet_is_in_modal, is_mobile}) {
                 
                 <Spacer />
 
-                <TweetButton tweet_is_in_modal={tweet_is_in_modal && true} />
+                <TweetButton tweet_is_in_modal={tweet_is_in_modal && true} dataTweet={data} />
             </Flex>
 
             

@@ -6,11 +6,26 @@ import './Tweet.css'
 import HumanTime from 'react-human-time';
 import { Flex } from '@chakra-ui/layout'
 import NavIcons from './left_navigation/NavIcons'
-import {EllipsisOutlined,FrownOutlined, UserAddOutlined, AppstoreAddOutlined, AudioMutedOutlined, StopOutlined, CodeOutlined, FlagOutlined} from '@ant-design/icons';
+import {EllipsisOutlined,
+    FrownOutlined, 
+    UserAddOutlined, 
+    AppstoreAddOutlined, 
+    AudioMutedOutlined, 
+    StopOutlined, 
+    CodeOutlined, 
+    FlagOutlined} from '@ant-design/icons';
 import LittleSmallInfoBox from './LittleSmallInfoBox'
 import MoreSectionList from './MoreSectionList'
+import { connect } from 'react-redux'
+import parse from 'html-react-parser';
 
-function Tweet({id, profileImg, name, username, time, like, retweet, tweet, withoutTweetActions,borderCurve, iconImg, class_name}) {
+function Tweet({ retweeterName, state, id, profileImg, 
+        name, username, 
+        time, like, retweet, 
+        tweet, withoutTweetActions,
+        borderCurve, iconImg, 
+        class_name}) {
+
     const [showMoreInfo, setShowMoreInfo] = useState(false);
     const [showTweetSett, setShowTweetSett] = useState(false);
 
@@ -29,16 +44,24 @@ function Tweet({id, profileImg, name, username, time, like, retweet, tweet, with
     const handleTweetSettLeave = () => {
         setShowTweetSett(false)
     }
-
+    //CHANGE EVERY \N \R (SPACE) TO HTML <BR />
+    const cleanedTweet = tweet.replace(/\r\n|\r|\n/g, "<br />");
 
     return (
-        <Box borderWidth='1px' padding='3' borderRadius={borderCurve && 'xl'} className={'tweet'}>
+        <Box borderWidth='1px' padding='3' 
+            borderRadius={borderCurve && 'xl'} 
+            className={'tweet'}>
+
+            {retweeterName && `${retweeterName} just retweeted`}
+
             <HStack alignItems='flex-start'>
                 <Box className='tweet_profile_img'>
                     {iconImg ? 
                         <Box className={class_name}>{iconImg}</Box>
                     :
-                        <Box className='profile_tweet_img' position='relative' onMouseOver={handleMoreOption}  onMouseLeave={handleMoreOptionLeave}>
+                        <Box className='profile_tweet_img' position='relative' 
+                            onMouseOver={handleMoreOption}  
+                            onMouseLeave={handleMoreOptionLeave}>
                             <Image 
                                 src={profileImg}
                                 borderRadius="full"
@@ -47,9 +70,7 @@ function Tweet({id, profileImg, name, username, time, like, retweet, tweet, with
                                 alt="profile"
                             />
 
-                            {showMoreInfo &&
-                                <LittleSmallInfoBox userInfo={{name, username, time, like, retweet, profileImg}} />
-                            }
+                            {showMoreInfo && <LittleSmallInfoBox userInfo={{name, username, time, like, retweet, profileImg}} /> }
                         </Box>
                     }
                 </Box>
@@ -82,14 +103,11 @@ function Tweet({id, profileImg, name, username, time, like, retweet, tweet, with
                                     </Box>
                                 }
                            </Box>
-                            
-                           
-                            
                         </Flex>
                     </Box>
 
                     <Box className='tweet_data_center'>
-                        <Text maxW='475px' fontSize='md' fontWeight='medium' lineHeight='shorter' >{tweet}</Text>
+                        <Text maxW='475px' fontSize='md' fontWeight='medium' lineHeight='shorter' >{parse(`<p> ${cleanedTweet} </p>`)}</Text>
                     </Box>
                     {/* //IF YOU DONT WANT TWEET ACTIONS COMPONENT, IT SHOULD NOT SHOW */}
                     {!withoutTweetActions &&
@@ -103,5 +121,7 @@ function Tweet({id, profileImg, name, username, time, like, retweet, tweet, with
         </Box>
     )
 }
-
-export default Tweet
+const mapStateToProps = (state) => ({
+    state:state
+})
+export default connect(mapStateToProps) (Tweet)

@@ -33,7 +33,7 @@ function TweetList({tweets}) {
                         name='Osas' 
                         username='@OsazeAgbi' 
                         tweet={data.text}
-                        
+                        retweeterName={data.retweeterName}
                         comment={data.comment} 
                         like={data.like} 
                         retweet={data.retweet}
@@ -43,7 +43,7 @@ function TweetList({tweets}) {
 
     return (
         <Box>
-            {userTweets ? userTweets : "There's an Error displaying posts"}         
+            {userTweets ? userTweets : "There's an Error displaying Tweets"}         
         </Box>
     )
 }

@@ -5,7 +5,10 @@ import {MessageOutlined, RetweetOutlined, HeartOutlined, UploadOutlined} from '@
 import { connect } from 'react-redux';
 
 function TweetActions({id, dispatch, msg, retweet, like}) {
-    
+    const handleRetweet = () => {
+        dispatch({type: 'RETWEET_COUNT', payload: id});
+        dispatch({type: 'RETWEETER_NAME', payload: {id, name:'Osaze'}});
+    }
     return (
         <Box >
             <HStack justifyContent='space-between' marginTop='2' maxW='425px' >
@@ -23,7 +26,7 @@ function TweetActions({id, dispatch, msg, retweet, like}) {
                     />
                 </Box>
 
-                <Box onClick={() => dispatch({type: 'RETWEET_COUNT', payload: id})}>
+                <Box onClick={handleRetweet}>
                     <TweetActionIcon 
                         icon={<RetweetOutlined />}
                         number={retweet}

@@ -11,6 +11,7 @@ function SideNav(props) {
     const showModal = (boo) => {
         props.dispatch({type:'MODAL', payload: boo});
     }
+    
 
     return (
         <Box className="side_nav" position='fixed'>
@@ -30,8 +31,11 @@ function SideNav(props) {
                     </Box>
                     
 
+
                     <NewTweet tooltip='Tweet' w='50px' h='50px' onClick={() => showModal(true)} />
                 </VStack>
+
+
 
                 {/* PROFILE PICTURE */}
                 <UserProfile tooltip='Accounts' hoverColor={true} />

@@ -12,12 +12,18 @@ import MessagesSection from './MessagesSection';
 import MoreSection from './MoreSection';
 import FloatingTweetButton from './FloatingTweetButton';
 import MobileNav from './MobileNav';
+import Login from './Login';
+import { connect } from 'react-redux';
 
 
 
-function Main() {
-   
+function Main() { 
+   const loginSuccessful  = false;
     return (
+        <>
+        {loginSuccessful ? <Login />
+        :
+       
         <Box minH='full' marginTop='1'>
             <Box className='overlay'></Box>
             <Flex>
@@ -55,6 +61,8 @@ function Main() {
                 <MobileNav />
             </Box>
         </Box>
+        }
+    </>
     )
 }
-export default Main
+export default connect() (Main)

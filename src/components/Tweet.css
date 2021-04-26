@@ -58,6 +58,9 @@
   .tweet_data_top {
     font-size: .7em !important;
   }
+  .tweet_data_top .username, .tweet_data_top .time {
+    font-size: .9em;
+  }
   .tweet_data_center {
     font-size: .8em !important;
   }

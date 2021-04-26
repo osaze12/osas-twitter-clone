@@ -21,22 +21,20 @@ function LittleSmallInfoBox({userInfo}) {
                         alt="profile"
                     />
                     <VStack spacing="-1.5" alignItems='flex-start'>
-
                         <Text className='d_bold'><b>{userInfo.name}</b></Text>
                         <Text fontSize='xs'>{userInfo.username}</Text>
                     </VStack>
                 </VStack>
-
-                
-            
-                <Button className='small_info_button' bg='black' _hover={{bg: 'black'}} borderRadius='full'>Following</Button>
+                <Button className='small_info_button' borderRadius='full'>Following</Button>
             </Flex>
+
             <Box>
                 <Text className='bio d_bold' fontSize='sm'>
                     I've learned that people will pay for what I know, and 
                     I can learn the things I don't know. So I learn everything.
                 </Text>
             </Box>
+            
             <Box marginTop='3' marginBottom='6'>
                 <HStack spacing='3'>
                     <Text><b className='d_bold'>3,402</b> Following</Text>

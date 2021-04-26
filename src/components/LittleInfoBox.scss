@@ -20,6 +20,11 @@
 
 .chakra-ui-light .small_info_button{
     color: #fff;
+    background-color: #000;
+}
+
+.chakra-ui-light .small_info_button:hover{
+    background-color: #000;
 }
 
 .chakra-ui-dark .small_info_button{
@@ -27,6 +32,10 @@
     border-color: #fff;
     background: #fff;
     color: #000;
+}
+
+.chakra-ui-dark .small_info_button:hover{
+    background-color: #fff;
 }
 
 .chakra-ui-dark .little_info_box .d_bold{

@@ -1,5 +1,5 @@
 import { Box, Divider, HStack, VStack } from '@chakra-ui/layout'
-import React from 'react'
+import React, { useState } from 'react'
 import {connect} from 'react-redux'
 
 import {
@@ -16,6 +16,13 @@ import './TweetModal.css'
 
 function TweetModal(props) {
     // const {onOpen, onClose } = useDisclosure();
+
+    const [dataFromChild, setDataFromChild] = useState('');
+
+    //SET DATA FROM CHILD COMPONENT TO PARENT LOCAL STATE
+    const handleCallback = (childData) =>{
+        setDataFromChild(childData);
+    }
 
     const handleClose = () => {
         props.dispatch({type:'MODAL', payload: false})
@@ -41,7 +48,7 @@ function TweetModal(props) {
                         <UserProfile paddingright={false} box_size='50px' />
                         <VStack flex='1' alignItems='flex-start'>
 
-                            <InputTweet allowInputMedia={false} normalInput={false} />
+                            <InputTweet allowInputMedia={false} normalInput={false} is_modal={true} parentCallback = {handleCallback} />
                             
                             <NavIcons icon={<GlobalOutlined style={{color: 'rgba(29,161,242,1.00)'}} />} 
                                 fontSiz='20px' w='150px' h='30px' 
@@ -49,7 +56,7 @@ function TweetModal(props) {
                             />
                             <Divider marginTop='4'/>
 
-                            <InputMedia tweet_is_in_modal={true} />
+                            <InputMedia tweet_is_in_modal={true} data={dataFromChild}  />
                         </VStack>
                     </HStack>
                 </Box>

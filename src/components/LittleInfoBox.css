@@ -18,6 +18,7 @@
 
 .tweet {
   cursor: pointer;
+  color: #cccccc;
 }
 
 .twitter_style {
@@ -135,6 +136,11 @@
 
 .chakra-ui-light .small_info_button {
   color: #fff;
+  background-color: #000;
+}
+
+.chakra-ui-light .small_info_button:hover {
+  background-color: #000;
 }
 
 .chakra-ui-dark .small_info_button {
@@ -144,7 +150,11 @@
   color: #000;
 }
 
+.chakra-ui-dark .small_info_button:hover {
+  background-color: #fff;
+}
+
 .chakra-ui-dark .little_info_box .d_bold {
-  color: #d9d9d9;
+  color: #d3d3d3;
 }
 /*# sourceMappingURL=LittleInfoBox.css.map */
