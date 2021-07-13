@@ -15,19 +15,23 @@ import MobileNav from './MobileNav';
 import Login from './Login';
 import { connect } from 'react-redux';
 
-
-
-function Main() { 
-   const loginSuccessful  = false;
+function Main({state}) { 
+   const loginSuccessful  = state.loginSuccessful;
     return (
         <>
-        {loginSuccessful ? <Login />
+        {!loginSuccessful ? <Login />
         :
        
         <Box minH='full' marginTop='1'>
             <Box className='overlay'></Box>
+
+
             <Flex>
-                <Box className='left_side' marginLeft='24' paddingRight='5' position='relative' width='100px'>
+                <Box className='left_side'
+                    marginLeft='24' 
+                    paddingRight='5' 
+                    position='relative' 
+                    width='100px'>
                     <SideNav />
                 </Box>
                 
@@ -42,7 +46,6 @@ function Main() {
                 </Box> 
             </Flex>
 
-
             <TweetModal />
 
             <Box>
@@ -52,7 +55,7 @@ function Main() {
             <Box>
                 <MoreSection />
             </Box>
-
+            {/* for mobile devices */}
             <Box>
                 <FloatingTweetButton />
             </Box>
@@ -65,4 +68,7 @@ function Main() {
     </>
     )
 }
-export default connect() (Main)
+const mapStateToProps = (state) => ({
+    state: state
+});
+export default connect(mapStateToProps) (Main)

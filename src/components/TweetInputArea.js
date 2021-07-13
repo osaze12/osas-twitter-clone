@@ -12,6 +12,7 @@ function TweetInputArea() {
                     <UserProfile paddingright={true} />
                 </Box>
                 
+                
                 <Box flex='1'>
                     <InputTweet allowInputMedia={true} normalInput={true} />
                 </Box>

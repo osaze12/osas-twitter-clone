@@ -1,4 +1,4 @@
-import { Image } from '@chakra-ui/image'
+
 import { Box, Text, HStack } from '@chakra-ui/layout'
 import React, { useState } from 'react'
 import TweetActions from './TweetActions'
@@ -13,46 +13,69 @@ import {EllipsisOutlined,
     AudioMutedOutlined, 
     StopOutlined, 
     CodeOutlined, 
-    FlagOutlined} from '@ant-design/icons';
+    FlagOutlined,   RetweetOutlined} from '@ant-design/icons';
 import LittleSmallInfoBox from './LittleSmallInfoBox'
 import MoreSectionList from './MoreSectionList'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import parse from 'html-react-parser';
+import Picture from './Picture'
 
-function Tweet({ retweeterName, state, id, profileImg, 
+function Tweet({ retweeterName, state, id, 
         name, username, 
         time, like, retweet, 
         tweet, withoutTweetActions,
         borderCurve, iconImg, 
         class_name}) {
 
+
+
     const [showMoreInfo, setShowMoreInfo] = useState(false);
     const [showTweetSett, setShowTweetSett] = useState(false);
+
+
 
     const handleMoreOption = () => {
         setShowMoreInfo(true)
     }
 
+
+
     const handleMoreOptionLeave = () => {
         setShowMoreInfo(false);
     }
+
+
 
     const handleTweetSett = () => {
         setShowTweetSett(!showTweetSett)
     }
 
+
+
     const handleTweetSettLeave = () => {
         setShowTweetSett(false)
     }
+
+
     //CHANGE EVERY \N \R (SPACE) TO HTML <BR /> .
     const cleanedTweet = tweet.replace(/\r\n|\r|\n/g, "<br />");
+
+
 
     return (
         <Box borderWidth='1px' padding='3' 
             borderRadius={borderCurve && 'xl'} 
             className={'tweet'}>
 
-            {retweeterName && `${retweeterName} just retweeted`}
+
+            {retweeterName &&
+             <p style={{ fontSize: '.7em', display: 'flex', fontWeight: 'bold', color: '#95a6b1'}}>
+                 <span>{<RetweetOutlined  style={{marginRight: '4px', fontWeight: 'bolder', display: 'flex'}}/> }</span>
+                 <span>{retweeterName} just retweeted</span>
+             </p>
+            }
+
+            
 
             <HStack alignItems='flex-start'>
                 <Box className='tweet_profile_img'>
@@ -62,15 +85,11 @@ function Tweet({ retweeterName, state, id, profileImg,
                         <Box className='profile_tweet_img' position='relative' 
                             onMouseOver={handleMoreOption}  
                             onMouseLeave={handleMoreOptionLeave}>
-                            <Image 
-                                src={profileImg}
-                                borderRadius="full"
-                                boxSize="50px"
-                                objectFit="cover"
-                                alt="profile"
-                            />
 
-                            {showMoreInfo && <LittleSmallInfoBox userInfo={{name, username, time, like, retweet, profileImg}} /> }
+
+                            <Picture/>
+
+                            {showMoreInfo && <LittleSmallInfoBox userInfo={{name, username, time, like, retweet}} /> }
                         </Box>
                     }
                 </Box>
@@ -78,11 +97,15 @@ function Tweet({ retweeterName, state, id, profileImg,
                 <Box className='tweet_data' flex='1'>
                     <Box className='tweet_data_top'>
                         <Flex justifyContent='space-between'>
+
+
                             <HStack spacing='1'>
                                 <Text  className='name'><b>{name}</b></Text>
                                 <Text fontSize='sm'  color='#6e767d'  className='username'>{username}</Text>
                                 <Text fontSize='sm'  color='#6e767d' className='time' ><span className='dot'><b>&middot;</b></span> {<HumanTime time={time}  />}</Text>
                             </HStack>
+
+
                            <Box className='more_tweet_option' onClick={handleTweetSett} onMouseLeave={handleTweetSettLeave} position='relative'>
                                <NavIcons 
                                     icon={<EllipsisOutlined />} 
@@ -90,6 +113,8 @@ function Tweet({ retweeterName, state, id, profileImg,
                                     fontSiz='25px' 
                                     w='40px' h='40px'
                                 />
+
+
 
                                 {showTweetSett &&
                                     <Box className='tweet_settings'>
@@ -106,9 +131,14 @@ function Tweet({ retweeterName, state, id, profileImg,
                         </Flex>
                     </Box>
 
+
+
                     <Box className='tweet_data_center'>
                         <Text maxW='475px' fontSize='md' fontWeight='medium' lineHeight='shorter' >{parse(`<p> ${cleanedTweet} </p>`)}</Text>
                     </Box>
+
+
+
                     {/* //IF YOU DONT WANT TWEET ACTIONS COMPONENT, IT SHOULD NOT SHOW */}
                     {!withoutTweetActions &&
                     

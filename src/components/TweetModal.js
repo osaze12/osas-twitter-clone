@@ -19,10 +19,14 @@ function TweetModal(props) {
 
     const [dataFromChild, setDataFromChild] = useState('');
 
+
+    
     //SET DATA FROM CHILD COMPONENT TO PARENT LOCAL STATE
     const handleCallback = (childData) =>{
         setDataFromChild(childData);
     }
+
+
 
     const handleClose = () => {
         props.dispatch({type:'MODAL', payload: false})
@@ -34,6 +38,8 @@ function TweetModal(props) {
             <Modal isOpen={props.showModal || false} onClose={handleClose}>
             <ModalOverlay />
             <ModalContent maxW='600px' borderRadius='2xl'>
+
+                
                 <Box outline='none' onClick={()=> props.dispatch({type:'MODAL', payload: false})}>
                     <NavIcons icon={<CloseOutlined style={{color:'#1da1f2'}} />}
                         tooltip='Close' 
@@ -43,6 +49,8 @@ function TweetModal(props) {
                 </Box>
                     
                 <Divider />
+
+
                 <Box padding='2.5'>
                     <HStack alignItems='flex-start' marginTop='1.5'>
                         <UserProfile paddingright={false} box_size='50px' />
@@ -54,9 +62,15 @@ function TweetModal(props) {
                                 fontSiz='20px' w='150px' h='30px' 
                                 text='Everyone can reply'
                             />
+
+
                             <Divider marginTop='4'/>
 
+
+
                             <InputMedia tweet_is_in_modal={true} data={dataFromChild}  />
+
+                            
                         </VStack>
                     </HStack>
                 </Box>

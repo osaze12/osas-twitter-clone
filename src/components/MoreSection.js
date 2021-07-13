@@ -42,19 +42,26 @@ function MoreSection(props) {
                 <MoreSectionList icon={<SettingOutlined style={{color:'rgb(91, 112, 131)'}} />} text='Settings and privacy' />
                 <MoreSectionList icon={<QuestionCircleOutlined style={{color:'rgb(91, 112, 131)'}} />} text='Help Center' />
 
+
                 {/* LIGHT/DARK MODE BUTTON */}
                 <Box onClick={onOpen}>
                     <MoreSectionList icon={<SkinOutlined style={{color:'rgba(29,161,242,1.00)'}}/>} text='Display' />
                 </Box>
+
+
 
                 <Modal isOpen={isOpen} onClose={onClose}>
                     <ModalOverlay />
                     <ModalContent maxWidth='600px'>
                         <ModalBody>
                             <Heading fontSize='x-large' textAlign='center' marginBottom='3' marginTop='4'>Customise your view</Heading>
+
+
                             <Text fontSize='sm' lineHeight='short' color='gray' marginBottom='2' textAlign='center'>
                                 Manage your background, and other features coming soon. These settings affect all the Twitter accounts on this browser.
                             </Text>
+
+
 
                             <Box padding='20px 50px 50px 50px'>
                                 <Tweet 
@@ -74,17 +81,23 @@ function MoreSection(props) {
                                     time={new Date(Date.now() - 5 * 1000)}/>
                             </Box>
 
+
                             <Box className='bkg' marginTop='5'>
-                            <Heading size='sm' color='rgb(91, 112, 131)'>Background</Heading>
-                                <Box className='bkg_inner'>
-                                        <Flex justifyContent='space-between'>
-                                            <Box className={`toogle_theme_box_${colorMode === 'light' ? 'light' : 'dark' }`} 
-                                                onClick={toggleColorMode}
-                                            >
-                                                {colorMode === "light" ? 'Default' :' Lights out' } </Box>
-                                        </Flex>
-                                </Box>
+                                <Heading size='sm' color='rgb(91, 112, 131)'>Background</Heading>
+
+
+                                    <Box className='bkg_inner'>
+                                            <Flex justifyContent='space-between'>
+                                                <Box className={`toogle_theme_box_${colorMode === 'light' ? 'light' : 'dark' }`} 
+                                                    onClick={toggleColorMode}>
+
+                                                    {colorMode === "light" ? 'Default' :' Lights out' } 
+                                                </Box>
+                                            </Flex>
+                                    </Box>
                             </Box>
+
+
 
                             <Box display='flex' justifyContent='center' marginTop='5'>
                                 <Button  background='#1da1f2'
@@ -94,7 +107,7 @@ function MoreSection(props) {
                                         onClick={onClose} 
                                         borderRadius='full' textAlign='center'
                                 >
-                                Done
+                                    Done
                                 </Button>
                             </Box> 
                         </ModalBody>

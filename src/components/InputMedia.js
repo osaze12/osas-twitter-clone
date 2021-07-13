@@ -10,6 +10,8 @@ function InputMedia({tweet_is_in_modal, is_mobile, data}) {
     return (
         <Box width='100%' className='input_media'>
             <Flex>
+
+                
                 <HStack spacing='1'>
                     <NavIcons icon={<PictureOutlined style={{color: 'rgba(29,161,242,1.00)'}} />} tooltip='Media' fontSiz='20px' w='40px' h='40px' />
                     <NavIcons icon={<GifOutlined style={{color: 'rgba(29,161,242,1.00)'}} />} tooltip='Gif' fontSiz='20px' w='40px' h='40px'/> 
@@ -18,7 +20,11 @@ function InputMedia({tweet_is_in_modal, is_mobile, data}) {
                     {! is_mobile && <NavIcons icon={<CalendarOutlined  style={{color: 'rgba(29,161,242,1.00)'}} />} tooltip='Schedule' fontSiz='20px' w='40px' h='40px' />}
                 </HStack>
                 
+
+
                 <Spacer />
+
+
 
                 <TweetButton tweet_is_in_modal={tweet_is_in_modal && true} dataTweet={data} />
             </Flex>

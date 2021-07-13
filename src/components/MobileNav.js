@@ -10,6 +10,7 @@ function MobileNav() {
         <Box className='mobile_nav'>
             <Box className='mobile_nav_inner'>
                 <Flex alignItems='center' justifyContent='center'>
+                    
                     <HStack spacing='8'>
                         <NavIcons icon={<HomeFilled style={{color:'#1da1f2'}} />} tooltip='Home' fontSiz='19px' />
                         <NavIcons icon={<SearchOutlined />} tooltip='Explore' fontSiz='19px' />

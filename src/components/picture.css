@@ -1,0 +1,13 @@
+.profile-pix {
+  width: 20px;
+  height: 20px;
+  background: #312e57f2;
+  color: #fff;
+  font-weight: bold;
+  padding: 25px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=picture.css.map */

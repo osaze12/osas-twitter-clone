@@ -15,9 +15,9 @@ function TweetButton({is, dispatch, tweet_is_in_modal, dataTweet}) {
         setIsDisabled(false);
     },[dataTweet])
     
-
     const handleButton = () => {
         if (dataTweet.length <= 200 && dataTweet.length > 3){
+
             const sendTweet = {
                 comment: 0,
                 id: is.liveTweet.length + 1,
@@ -43,7 +43,8 @@ function TweetButton({is, dispatch, tweet_is_in_modal, dataTweet}) {
                 isDisabled={isDisabled} 
                 _hover={{background: '#1da1f2'}} size='md'
                 color='white' background='#1da1f2' 
-                borderRadius='full'><b>Tweet</b></Button>
+                borderRadius='full'><b>Tweet</b>
+            </Button>
         </Box>
     )
 }

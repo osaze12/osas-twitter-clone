@@ -9,6 +9,8 @@ const initialState = {
     moreSection: false,
     tweetText: '',
     retweeterName: null,
+    loginSuccessful: false,
+    username: '',
     liveTweet: getStringData ? getJData : [
         { comment :0, id:0, like :25, retweet :10, share :0, retweeterName: null, text :"whether the whether is fine, hot cold or warm, \n we'll weather the weather, whatever the weather, and whether we like it.",
             "createdAt":{"key":null,"ref":null,"props":{"time":1618657357154},"_owner":null,"_store":{}}}
@@ -104,6 +106,13 @@ const initialState = {
                 ...state, 
                 liveTweet: state.liveTweet.map(tweet => tweet.id === action.payload
                     ? {...tweet, retweet: singleTweetRetweet.retweet +1} : tweet)
+            }
+
+        case 'LOGIN_SUCCESSFUL':
+            return {
+                ...state,
+                loginSuccessful: action.payload.isSuccessful,
+                username: action.payload.username
             }
 
         

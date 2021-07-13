@@ -52,7 +52,11 @@ function InputTweet({allowInputMedia, normalInput, disabled, dispatch, state, pa
                 />
             </Box>
 
+
+
             {allowInputMedia && <InputMedia data={tweetText} /> }
+
+
         </Box>
     )
 }
